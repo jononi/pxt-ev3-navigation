@@ -1,7 +1,7 @@
 {
     "name": "pxt-ev3-navigation",
     "version": "0.0.1",
-    "description": "Controlling a chassis-like EV3 robot",
+    "description": "Navigation sensor for the EV3",
     "license": "MIT",
     "dependencies": {
         "ev3": "*"
@@ -13,7 +13,7 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
     "targetVersions": {
         "target": "0.4.2",
         "pxt": "3.21.7"
