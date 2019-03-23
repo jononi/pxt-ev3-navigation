@@ -12,12 +12,12 @@ enum NavigationSensorEvent {
     ObjectNear = sensors.ThresholdState.Low
 }
 
-// RANGE mode: range (distance to closest obstacle, in mm) for: front left , front right , left side, right side, rear center
+// LIDARS mode: range (distance to closest obstacle, in mm) for: front left , front right , left side, right side, rear center
 // HEADING mode:  tilt compensated heading (degrees to magnetic north), pitch angle , roll angle in degress
 const enum NavigationSensorMode {
     None = -1,
-    //% block="RANGE"
-    RANGE = 0,
+    //% block="LIDARS"
+    LIDARS = 0,
     //% block="HEADING"
     HEADING = 1,
 }
@@ -105,8 +105,8 @@ namespace sensors {
         //% group="Navigation Sensor"
         distanceFrontLeft(): number {
             // in mm
-            this._setMode(NavigationSensorMode.RANGE)
-            return this.getNumber(NumberFormat.UInt16LE, 0)
+            this._setMode(NavigationSensorMode.LIDARS)
+            return this.getNumber(NumberFormat.Int16LE, 0)
         }
 
 
@@ -124,8 +124,8 @@ namespace sensors {
         //% group="Navigation Sensor"
         distanceFrontRight(): number {
             // in mm
-            this._setMode(NavigationSensorMode.RANGE)
-            return this.getNumber(NumberFormat.UInt16LE, 2)
+            this._setMode(NavigationSensorMode.LIDARS)
+            return this.getNumber(NumberFormat.Int16LE, 2)
         }
 
 
@@ -143,8 +143,8 @@ namespace sensors {
         //% group="Navigation Sensor"
         distanceRear(): number {
             // in mm
-            this._setMode(NavigationSensorMode.RANGE)
-            return this.getNumber(NumberFormat.UInt16LE, 8)
+            this._setMode(NavigationSensorMode.LIDARS)
+            return this.getNumber(NumberFormat.Int16LE, 8)
         }
 
 
@@ -162,8 +162,8 @@ namespace sensors {
         //% group="Navigation Sensor"
         distanceLeftSide(): number {
             // in mm
-            this._setMode(NavigationSensorMode.RANGE)
-            return this.getNumber(NumberFormat.UInt16LE, 4)
+            this._setMode(NavigationSensorMode.LIDARS)
+            return this.getNumber(NumberFormat.Int16LE, 4)
         }
 
 
@@ -181,8 +181,8 @@ namespace sensors {
         //% group="Navigation Sensor"
         distanceRightSide(): number {
             // in mm
-            this._setMode(NavigationSensorMode.RANGE)
-            return this.getNumber(NumberFormat.UInt16LE, 6)
+            this._setMode(NavigationSensorMode.LIDARS)
+            return this.getNumber(NumberFormat.Int16LE, 6)
         }
 
 
